@@ -3,12 +3,12 @@
 import { IconButton, Menu, MenuItem, Tooltip } from '@mui/material';
 import { useState } from 'react';
 import { GridColDef } from '@mui/x-data-grid';
-import ChatIcon from '@mui/icons-material/Chat';
 import MoreHoriz from '@mui/icons-material/MoreHoriz';
 import { User } from "@/types/user";
 import { useUsers } from '@/hooks/useUsers';
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from '@/context/userContext';
+import { ObservationModal } from '@/components/ObservationModal';
 
 const dateFormatter = (params: string | number) => {
     const formatterDate = params
@@ -17,7 +17,6 @@ const dateFormatter = (params: string | number) => {
 
     return formatterDate;
 }
-
 
 export const ColumnsGrid: GridColDef[] = [
     { field: 'id', headerName: 'Código', width: 200 },
@@ -76,8 +75,8 @@ export const ColumnsGrid: GridColDef[] = [
         field: 'observacoes',
         headerName: 'Obs.',
         width: 200,
-        renderCell: () => (
-            <ChatIcon />
+        renderCell: (params) => (
+            <ObservationModal observationData={params.row.observacoes} />
         ),
     },
     {

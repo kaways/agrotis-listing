@@ -3,7 +3,9 @@ import { LocalStorageService } from "@/services/localStorageService";
 import { User } from "@/types/user";
 
 export const useUsers = () => {
-  const [users, setUsers] = useState<User[]>(LocalStorageService.getItem("users"));
+  const [users, setUsers] = useState<User[]>(
+    LocalStorageService.getItem("users")
+  );
 
   const addUser = (user: Omit<User, "id">) => {
     const storedData = LocalStorageService.getItem("users");
@@ -22,7 +24,6 @@ export const useUsers = () => {
       listUsers = [];
     }
 
-    // Gerar ID
     const novoId =
       listUsers.length > 0 ? Math.max(...listUsers.map((u) => u.id)) + 1 : 1; // Começar com ID 1 se não houver usuários
 
@@ -38,7 +39,15 @@ export const useUsers = () => {
     LocalStorageService.setItem("users", updatedUsers);
   };
 
-  const updateUser = (formValues: { nome: string; dataInicial: string; dataFinal: string; propriedades: number; laboratorio: number; id?: number | undefined; observacoes?: string | undefined; }) => {
+  const updateUser = (formValues: {
+    nome: string;
+    dataInicial: string;
+    dataFinal: string;
+    propriedades: number;
+    laboratorio: number;
+    id?: number | undefined;
+    observacoes?: string | undefined;
+  }) => {
     const updatedUsers = users.map((user) =>
       user.id === formValues.id ? formValues : user
     );

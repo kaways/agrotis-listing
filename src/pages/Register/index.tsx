@@ -4,11 +4,9 @@ import { RegisterForm } from "./RegisterForm";
 import { Header } from "@/components/header";
 import { Link } from 'react-router-dom';
 import { useUsers } from '@/hooks/useUsers';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Typography from '@mui/material/Typography';
+import { Breadcrumbs, Typography,  Snackbar, Alert, AlertColor } from '@mui/material';
 import { useUserContext } from '@/context/userContext';
 import { useNavigate } from "react-router-dom";
-import { Snackbar, Alert, AlertColor } from '@mui/material';
 
 export const RegisterPage = () => {
     const navigate = useNavigate();
@@ -48,7 +46,7 @@ export const RegisterPage = () => {
                     <Breadcrumbs aria-label="breadcrumb">
                         <Link
                             className="text-white"
-                            to="/DataList"
+                            to="/listagem"
                         >
                             Teste Front-end
                         </Link>
@@ -61,7 +59,7 @@ export const RegisterPage = () => {
                     defaultValues={currentUser}
                     isEdit={isEditMode}
                 />
-                
+
                 <Snackbar
                     open={snackbar.open}
                     autoHideDuration={6000}

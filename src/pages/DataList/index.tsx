@@ -1,10 +1,7 @@
 import { DataGrid } from '@mui/x-data-grid';
 import { useNavigate } from "react-router-dom";
-import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
+import { Paper, Button, Typography, Breadcrumbs } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import Typography from '@mui/material/Typography';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
 import { Link } from 'react-router-dom';
 import { useUsers } from '@/hooks/useUsers';
 import columns from './ColumnsGrid';
