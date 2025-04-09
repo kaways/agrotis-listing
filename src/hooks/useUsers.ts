@@ -38,9 +38,9 @@ export const useUsers = () => {
     LocalStorageService.setItem("users", updatedUsers);
   };
 
-  const updateUser = (updatedUser: User) => {
+  const updateUser = (formValues: { nome: string; dataInicial: string; dataFinal: string; propriedades: number; laboratorio: number; id?: number | undefined; observacoes?: string | undefined; }) => {
     const updatedUsers = users.map((user) =>
-      user.id === updatedUser.id ? updatedUser : user
+      user.id === formValues.id ? formValues : user
     );
 
     LocalStorageService.setItem("users", updatedUsers);

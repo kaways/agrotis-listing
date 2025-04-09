@@ -61,6 +61,7 @@ export const RegisterPage = () => {
                     defaultValues={currentUser}
                     isEdit={isEditMode}
                 />
+                
                 <Snackbar
                     open={snackbar.open}
                     autoHideDuration={6000}
