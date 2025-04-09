@@ -1,4 +1,4 @@
-# README | Projeto Agrotis Gestão de Usuários
+# README | Projeto Agrotis - Gestão de Usuários
 
 Visão Geral
 
@@ -8,7 +8,7 @@ Aplicação web para gerenciamento de contatos com:
 
 ✔ CRUD completo de usuários
 
-✔ Integração com servies de Laboratorios e Propriedades
+✔ Integração com services de Laboratorios e Propriedades
 
 ✔ Persistência dos dados usando LocalStorage
 
